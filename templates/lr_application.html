@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% block title %}Regresion Lineal - Aplicacion{% endblock %}
+{% block content %}
+
+<header class="hero-section">
+    <div class="container">
+        <span class="hero-tag">Aplicacion Practica</span>
+        <h1>Estimar <span>Tiempo de Entrega</span> segun Distancia</h1>
+        <p>Modelo de Regresion Lineal Simple implementado con scikit-learn, numpy, pandas y matplotlib.</p>
+    </div>
+</header>
+
+<div class="container mt-5 mb-section">
+
+    <!-- 1. PROBLEM CONTEXT -->
+    <div class="mb-5">
+        <span class="section-badge"># 1. Contexto del Problema</span>
+        <h2 class="section-title">Problema a Resolver</h2>
+    </div>
+
+    <div class="card-dark mb-4">
+        <h3>Que problema se esta resolviendo?</h3>
+        <p>Las empresas de logistica y domicilios necesitan estimar con precision el tiempo que tardara un envio para planificar rutas, asignar repartidores y mejorar la experiencia del cliente.</p>
+        <p>El fenomeno que se analiza es la <strong>relacion entre la distancia que recorre un paquete</strong> desde el punto de origen hasta el destino, y el <strong>tiempo total que toma完成 el delivery</strong>.</p>
+        <p>Los datos representan <strong>600 envios historicos</strong> con su distancia recorrida y tiempo real de entrega registrado. Se aplica Regresion Lineal Simple para:</p>
+        <ul class="features-list mt-2">
+            <li>Descubrir la relacion matematica entre distancia y tiempo.</li>
+            <li>Predigir el tiempo estimado de entrega para nuevas distancias.</li>
+            <li>Mejorar la planificacion logistica con datos reales.</li>
+        </ul>
+    </div>
+
+    <!-- 2. VARIABLES -->
+    <div class="mb-5">
+        <span class="section-badge"># 2. Variables del Modelo</span>
+        <h2 class="section-title">Variables</h2>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-6">
+            <div class="card-dark">
+                <div class="card-icon icon-blue">X</div>
+                <h3>Variable Independiente (X)</h3>
+                <p><strong>Distancia recorrida</strong></p>
+                <p>La distancia en kilometros desde el punto de origen hasta el destino del envio. Es el valor de entrada que el usuario proporciona para hacer la prediccion.</p>
+                <p><span class="pill">Unidad: kilometros (km)</span></p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-dark">
+                <div class="card-icon icon-red">Y</div>
+                <h3>Variable Dependiente (Y)</h3>
+                <p><strong>Tiempo de entrega</strong></p>
+                <p>El tiempo total en minutos que tarda el envio en completarse. Es el valor que el modelo intenta predecir.</p>
+                <p><span class="pill">Unidad: minutos (min)</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. DATASET -->
+    <div class="mb-5">
+        <span class="section-badge"># 3. Dataset</span>
+        <h2 class="section-title">Conjunto de Datos</h2>
+    </div>
+
+    <div class="card-dark mb-4">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="num">{{ stats.total_records }}</div>
+                    <div class="label">Registros totales</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="num">{{ stats.min_distance }} - {{ stats.max_distance }}</div>
+                    <div class="label">Rango distancia (km)</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="num">{{ stats.mean_distance }}</div>
+                    <div class="label">Distancia promedio (km)</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="num">{{ stats.mean_time }}</div>
+                    <div class="label">Tiempo promedio (min)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-dark mb-4">
+        <p><strong>Origen de los datos:</strong> Dataset generado con 600 registros simulados basados en un modelo real de logistica urbana, con una relacion lineal real entre distancia y tiempo, mas ruido aleatorio para simular variabilidad real.</p>
+        <p><strong>Variables:</strong> <code>distance_km</code> (Distancia en km) y <code>delivery_time_min</code> (Tiempo de entrega en min).</p>
+    </div>
+
+    <div class="card-dark mb-4" style="overflow-x: auto;">
+        <h4 class="mb-3">Primeros 10 registros del dataset</h4>
+        <table class="table-dark-custom">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Distancia (km)</th>
+                    <th>Tiempo de Entrega (min)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in sample_data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.distance_km }}</td>
+                    <td>{{ row.delivery_time_min }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. DATA VISUALIZATION -->
+    <div class="mb-5">
+        <span class="section-badge"># 4. Visualizacion de Datos</span>
+        <h2 class="section-title">Grafico de Dispersion con Linea de Regresion</h2>
+    </div>
+
+    <div class="graph-container mb-4">
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Grafico de dispersion - Distancia vs Tiempo de Entrega">
+    </div>
+
+    <div class="card-dark mb-4">
+        <p>El grafico muestra los 600 puntos de datos reales en azul y la linea de regresion en rojo. Se observa una <strong>relacion positiva clara</strong>: a mayor distancia, mayor tiempo de entrega. La linea ajustada representa la mejor aproximacion lineal del modelo.</p>
+    </div>
+
+    <!-- 5. LINEAR REGRESSION MODEL -->
+    <div class="mb-5">
+        <span class="section-badge"># 5. Modelo de Regresion Lineal</span>
+        <h2 class="section-title">Modelo Entrenado</h2>
+    </div>
+
+    <div class="card-dark mb-4">
+        <div class="code-snippet">
+            from sklearn.linear_model import LinearRegression<br><br>
+            X = df[['distance_km']]  # Variable independiente<br>
+            y = df['delivery_time_min']  # Variable dependiente<br><br>
+            model = LinearRegression()<br>
+            model.fit(X, y)  # Entrenar el modelo
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card-dark text-center">
+                <div class="card-icon icon-blue mx-auto">m</div>
+                <h4>Pendiente (slope)</h4>
+                <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-light);">{{ stats.slope }}</p>
+                <p>Por cada km adicional, el tiempo aumenta ~{{ stats.slope }} min.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-dark text-center">
+                <div class="card-icon icon-purple mx-auto">b</div>
+                <h4>Intercepto (bias)</h4>
+                <p style="font-size: 1.5rem; font-weight: 700; color: #c77dff;">{{ stats.intercept }}</p>
+                <p>Tiempo base cuando la distancia es 0 km.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-dark text-center">
+                <div class="card-icon icon-green mx-auto">R²</div>
+                <h4>Coeficiente de Determinacion</h4>
+                <p style="font-size: 1.5rem; font-weight: 700; color: #34d399;">{{ stats.r_squared }}</p>
+                <p>{{ (stats.r_squared * 100)|round(1) }}% de la varianza es explicada por el modelo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-dark mb-4">
+        <div class="concept-highlight">
+            Ecuacion del modelo: <strong>Tiempo = {{ stats.slope }} x Distancia + {{ stats.intercept }}</strong>
+        </div>
+    </div>
+
+    <!-- 6. PREDICTION FORM -->
+    <div class="mb-5">
+        <span class="section-badge"># 6. Formulario de Prediccion</span>
+        <h2 class="section-title">Predecir Tiempo de Entrega</h2>
+    </div>
+
+    <div class="card-dark mb-4">
+        <p>Ingrese la distancia en kilometros para obtener una prediccion del tiempo de entrega generada por el modelo de Machine Learning.</p>
+
+        <form method="POST" action="/ml/supervised/lr/application" class="mt-4">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-6">
+                    <label for="distance" class="form-label" style="color: var(--primary-light); font-weight: 600;">
+                        Distancia (km)
+                    </label>
+                    <input type="text" class="form-control-dark form-control" id="distance" name="distance"
+                           placeholder="Ej: 75.5" value="{{ distance_input or '' }}" required>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn-primary-custom w-100">
+                        Predecir Tiempo
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        {% if error %}
+        <div class="alert alert-danger mt-3" style="background: rgba(233, 69, 96, 0.15); border: 1px solid rgba(233, 69, 96, 0.4); color: #fca5a5; border-radius: var(--radius-sm);">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if prediction is not none %}
+        <div class="prediction-result mt-4">
+            <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 0.5rem;">Tiempo estimado de entrega para {{ distance_input }} km:</p>
+            <h2>{{ prediction }} minutos</h2>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Generado por el modelo de Regresion Lineal (scikit-learn)</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="card-dark">
+        <h4 style="color: var(--warning);">Nota importante</h4>
+        <p>La prediccion es generada en tiempo real por el modelo de Machine Learning entrenado con 600 registros. No es un valor hardcodeado ni calculado manualmente. El modelo aplica la ecuacion <strong>Y = {{ stats.slope }}X + {{ stats.intercept }}</strong> para generar cada prediccion.</p>
+    </div>
+
+</div>
+
+{% endblock %}

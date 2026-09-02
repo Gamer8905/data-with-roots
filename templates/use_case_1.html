@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Caso de Uso 1 - Diagnostico Medico{% endblock %}
+{% block content %}
+
+<header class="hero-section">
+    <div class="container">
+        <span class="hero-tag">Caso de Uso 1</span>
+        <h1>Diagnostico Medico con <span>IA</span></h1>
+        <p>Aplicacion de Machine Learning para detectar enfermedades a partir de imagenes medicas.</p>
+    </div>
+</header>
+
+<div class="container mt-5 mb-section">
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card-dark h-100">
+                <h3>Contexto del Problema</h3>
+                <p>El diagnostico medico temprano es crucial para el tratamiento efectivo de enfermedades como el cancer de piel. Los dermatologos experimentados pueden identificar lesiones malignas, pero la escasez de especialistas en muchas regiones retrasa los diagnosticos.</p>
+                <p>El problema es: <strong>Como automatizar la deteccion temprana de lesiones cutaneas malignas</strong> a partir de imagenes medicas, reduciendo el tiempo de diagnostico y mejorando la precision.</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card-dark h-100">
+                <div class="card-icon icon-blue mx-auto">🏥</div>
+                <h4 class="text-center">Tipo de ML</h4>
+                <p class="text-center"><strong>Aprendizaje Supervisado</strong> - Clasificacion</p>
+                <div class="text-center mt-3">
+                    <span class="pill">Deep Learning</span>
+                    <span class="pill">CNN</span>
+                    <span class="pill">Transfer Learning</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-3">
+        <div class="col-md-6">
+            <div class="card-dark h-100">
+                <h4 style="color: var(--primary-light);">Datos que podrian usarse</h4>
+                <ul class="features-list">
+                    <li>Imagenes dermatoscopicas de lesiones cutaneas.</li>
+                    <li>Metadatos del paciente (edad, sexo, historial).</li>
+                    <li>Caracteristicas extraidas: asimetria, borde, color, diametro (regla ABCD).</li>
+                    <li>Diagnostico histopatologico confirmado (benigno/maligno).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-dark h-100">
+                <h4 style="color: var(--primary-light);">Que deberia predecir el modelo</h4>
+                <ul class="features-list">
+                    <li><strong>Clasificacion:</strong> Si la lesion es benigna o maligna.</li>
+                    <li><strong>Probabilidad:</strong> Nivel de confianza del diagnostico.</li>
+                    <li><strong>Tipo especifico:</strong> Clasificar entre melanoma, carcinoma, nevus, etc.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-dark mt-4">
+        <h4 style="color: var(--success);">Beneficio potencial</h4>
+        <p>Reducir el tiempo de diagnostico de semanas a segundos, permitir tamizajes masivos en zonas rurales, asistir a dermatologos con una segunda opinion automatizada, y aumentar significativamente la tasa de deteccion temprana de cancer de piel, salvando vidas.</p>
+    </div>
+
+</div>
+
+{% endblock %}
