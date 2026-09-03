@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Caso de Uso 3 - Prediccion de Demanda{% endblock %}
+{% block title %}Use Case 3 - Demand Forecasting{% endblock %}
 {% block content %}
 
 <header class="hero-section">
     <div class="container">
-        <span class="hero-tag">Caso de Uso 3</span>
-        <h1>Prediccion de <span>Demanda</span> en Retail</h1>
-        <p>ML para optimizar inventarios y satisfaccion del cliente en cadenas de retail.</p>
+        <span class="hero-tag">Use Case 3</span>
+        <h1>Retail <span>Demand</span> Forecasting</h1>
+        <p>ML to optimize inventory and customer satisfaction in retail chains.</p>
     </div>
 </header>
 
@@ -15,16 +15,16 @@
     <div class="row g-4">
         <div class="col-lg-8">
             <div class="card-dark h-100">
-                <h3>Contexto del Problema</h3>
-                <p>Las cadenas de retail enfrentan el desafio constante de equilibrar el inventario: tener suficiente stock para satisfacer la demanda sin incurrir en costos excesivos de almacenamiento. La falta de productos genera perdida de clientes, mientras que el sobrestock genera perdidas economicas por vencimiento y obsolescencia.</p>
-                <p>El problema es: <strong>Como predecir la demanda futura de productos</strong> para optimizar las compras, reducir desperdicios y maximizar la satisfaccion del cliente.</p>
+                <h3>Problem Context</h3>
+                <p>Retail chains constantly face the challenge of balancing inventory: having enough stock to meet demand without incurring excessive storage costs. Lack of product availability leads to customer loss, while overstock causes economic losses due to spoilage and obsolescence.</p>
+                <p>The problem is: <strong>How to predict future product demand</strong> to optimize purchasing, reduce waste, and maximize customer satisfaction.</p>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="card-dark h-100">
                 <div class="card-icon icon-green mx-auto">🛒</div>
-                <h4 class="text-center">Tipo de ML</h4>
-                <p class="text-center"><strong>Aprendizaje Supervisado</strong> - Regresion</p>
+                <h4 class="text-center">Type of ML</h4>
+                <p class="text-center"><strong>Supervised Learning</strong> - Regression</p>
                 <div class="text-center mt-3">
                     <span class="pill">Time Series</span>
                     <span class="pill">XGBoost</span>
@@ -37,31 +37,31 @@
     <div class="row g-4 mt-3">
         <div class="col-md-6">
             <div class="card-dark h-100">
-                <h4 style="color: var(--primary-light);">Datos que podrian usarse</h4>
+                <h4 style="color: var(--primary-light);">Data that could be used</h4>
                 <ul class="features-list">
-                    <li>Historial de ventas por producto y tienda.</li>
-                    <li>Datos de precios y promociones anteriores.</li>
-                    <li>Variables estacionales y calendario (festivos).</li>
-                    <li>Datos meteorologicos externos.</li>
-                    <li>Precio de competidores y eventos del mercado.</li>
+                    <li>Sales history by product and store.</li>
+                    <li>Past pricing and promotion data.</li>
+                    <li>Seasonal variables and calendar (holidays).</li>
+                    <li>External weather data.</li>
+                    <li>Competitor pricing and market events.</li>
                 </ul>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card-dark h-100">
-                <h4 style="color: var(--primary-light);">Que deberia predecir el modelo</h4>
+                <h4 style="color: var(--primary-light);">What the model should predict</h4>
                 <ul class="features-list">
-                    <li><strong>Cantidad demandada:</strong> Unidades esperadas de venta por producto.</li>
-                    <li><strong>Periodo:</strong> Prediccion diaria, semanal o mensual.</li>
-                    <li><strong>Alertas:</strong> Cuando la demanda excedera la capacidad de stock actual.</li>
+                    <li><strong>Demanded quantity:</strong> Expected units sold per product.</li>
+                    <li><strong>Period:</strong> Daily, weekly, or monthly prediction.</li>
+                    <li><strong>Alerts:</strong> When demand will exceed current stock capacity.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="card-dark mt-4">
-        <h4 style="color: var(--success);">Beneficio potencial</h4>
-        <p>Reducir perdidas por sobrestock y desabastecimiento en un 20-30%, mejorar la satisfaccion del cliente al tener siempre los productos disponibles, optimizar la cadena de suministro y reducir el desperdicio de productos perecederos.</p>
+        <h4 style="color: var(--success);">Potential benefit</h4>
+        <p>Reduce losses from overstock and stockouts by 20-30%, improve customer satisfaction by consistently keeping products available, optimize the supply chain, and reduce waste of perishable products.</p>
     </div>
 
 </div>

@@ -1,145 +1,145 @@
 {% extends "base.html" %}
-{% block title %}Conceptos de Machine Learning{% endblock %}
+{% block title %}Machine Learning Concepts{% endblock %}
 {% block content %}
 
 <header class="hero-section">
     <div class="container">
         <span class="hero-tag">Machine Learning</span>
-        <h1>Conceptos de <span>Machine Learning</span></h1>
-        <p>Entendiendo como las maquinas adquieren la capacidad de aprender a partir de datos.</p>
+        <h1>Machine Learning <span>Concepts</span></h1>
+        <p>Understanding how machines gain the ability to learn from data.</p>
     </div>
 </header>
 
 <div class="container mt-5 mb-section">
 
     <div class="mb-5">
-        <span class="section-badge"># Concepto Base</span>
-        <h2 class="section-title">Que es Machine Learning?</h2>
+        <span class="section-badge"># Basic Concept</span>
+        <h2 class="section-title">What is Machine Learning?</h2>
     </div>
 
     <div class="card-dark mb-4">
-        <p>El <strong>Machine Learning (ML)</strong> o Aprendizaje Automatico es una rama fundamental de la <strong>Inteligencia Artificial (IA)</strong> que dota a las computadoras de la capacidad de aprender y mejorar su rendimiento en tareas especificas mediante la experiencia y el analisis de datos.</p>
+        <p><strong>Machine Learning (ML)</strong> is a fundamental branch of <strong>Artificial Intelligence (AI)</strong> that gives computers the ability to learn and improve their performance on specific tasks through experience and data analysis.</p>
 
         <div class="concept-highlight">
-            "Un programa de computadora aprende de la experiencia (E) con respecto a alguna clase de tareas (T) y medida de rendimiento (P), si su desempeno en las tareas en T, medido por P, mejora con la experiencia E."
+            "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
             <div style="font-size: 0.85rem; margin-top: 6px; color: var(--primary-light); font-style: normal; font-weight: 600;">- Tom M. Mitchell (1997)</div>
         </div>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Proposito Principal</span>
-        <h2 class="section-title">Cual es el proposito del Machine Learning?</h2>
+        <span class="section-badge"># Main Purpose</span>
+        <h2 class="section-title">What is the purpose of Machine Learning?</h2>
     </div>
 
     <div class="card-dark mb-4">
-        <p>El proposito principal del Machine Learning es <strong>automatizar la toma de decisiones</strong> basandose en datos, sin necesidad de programar reglas explicitas para cada escenario. Permite a los sistemas:</p>
+        <p>The main purpose of Machine Learning is to <strong>automate decision-making</strong> based on data, without needing to program explicit rules for every scenario. It allows systems to:</p>
         <ul class="features-list mt-3">
-            <li>Identificar patrones complejos en grandes volumenes de datos.</li>
-            <li>Hacer predicciones sobre datos nuevos nunca antes vistos.</li>
-            <li>Adaptarse automaticamente cuando los datos cambian.</li>
-            <li>Resolver problemas demasiado complejos para la programacion tradicional.</li>
+            <li>Identify complex patterns in large volumes of data.</li>
+            <li>Make predictions on new, previously unseen data.</li>
+            <li>Automatically adapt when the data changes.</li>
+            <li>Solve problems too complex for traditional programming.</li>
         </ul>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Pipeline de ML</span>
-        <h2 class="section-title">Relacion: Datos, Entrenamiento, Modelos y Predicciones</h2>
+        <span class="section-badge"># ML Pipeline</span>
+        <h2 class="section-title">Relationship: Data, Training, Models, and Predictions</h2>
     </div>
 
     <div class="row g-4 mb-4">
         <div class="col-md-3">
             <div class="card-dark text-center">
                 <div class="card-icon icon-blue mx-auto">📁</div>
-                <h4>Datos</h4>
-                <p>La materia prima del ML. Sin datos de calidad, no hay aprendizaje posible.</p>
+                <h4>Data</h4>
+                <p>The raw material of ML. Without quality data, no learning is possible.</p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card-dark text-center">
                 <div class="card-icon icon-purple mx-auto">⚙️</div>
-                <h4>Entrenamiento</h4>
-                <p>Proceso donde el algoritmo analiza los datos para aprender patrones y relaciones.</p>
+                <h4>Training</h4>
+                <p>The process in which the algorithm analyzes the data to learn patterns and relationships.</p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card-dark text-center">
                 <div class="card-icon icon-green mx-auto">🤖</div>
-                <h4>Modelo</h4>
-                <p>El resultado del entrenamiento: una funcion matematica que representa los patrones aprendidos.</p>
+                <h4>Model</h4>
+                <p>The result of training: a mathematical function that represents the patterns learned.</p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card-dark text-center">
                 <div class="card-icon icon-yellow mx-auto">🎯</div>
-                <h4>Prediccion</h4>
-                <p>El modelo aplica lo aprendido a datos nuevos para generar resultados o decisiones.</p>
+                <h4>Prediction</h4>
+                <p>The model applies what it learned to new data to generate results or decisions.</p>
             </div>
         </div>
     </div>
 
     <div class="card-dark mb-4">
         <div class="concept-highlight">
-            Flujo: <strong>Datos crudos</strong> &rarr; <strong>Preprocesamiento</strong> &rarr; <strong>Entrenamiento</strong> &rarr; <strong>Modelo entrenado</strong> &rarr; <strong>Predicciones</strong>
+            Flow: <strong>Raw data</strong> &rarr; <strong>Preprocessing</strong> &rarr; <strong>Training</strong> &rarr; <strong>Trained model</strong> &rarr; <strong>Predictions</strong>
         </div>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Importancia</span>
-        <h2 class="section-title">La importancia de los datos en ML</h2>
+        <span class="section-badge"># Importance</span>
+        <h2 class="section-title">The importance of data in ML</h2>
     </div>
 
     <div class="card-dark mb-4">
-        <p>Los datos son el recurso mas critico en Machine Learning. Su calidad determina directamente la calidad del modelo:</p>
+        <p>Data is the most critical resource in Machine Learning. Its quality directly determines the quality of the model:</p>
         <div class="row g-3 mt-3">
             <div class="col-md-4">
                 <div class="info-box">
-                    <strong style="color: var(--primary-light);">Volumen</strong>
-                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Mas datos permiten al modelo aprender patrones mas robustos y generalizar mejor.</p>
+                    <strong style="color: var(--primary-light);">Volume</strong>
+                    <p class="mb-0 mt-2" style="font-size:0.9rem;">More data allows the model to learn more robust patterns and generalize better.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="info-box">
-                    <strong style="color: var(--primary-light);">Calidad</strong>
-                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Datos limpios, completos y sin errores producen modelos mas confiables.</p>
+                    <strong style="color: var(--primary-light);">Quality</strong>
+                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Clean, complete, and error-free data produces more reliable models.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="info-box">
-                    <strong style="color: var(--primary-light);">Relevancia</strong>
-                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Seleccionar las variables correctas es clave para que el modelo aprenda relaciones significativas.</p>
+                    <strong style="color: var(--primary-light);">Relevance</strong>
+                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Selecting the right variables is key for the model to learn meaningful relationships.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Ejemplos</span>
-        <h2 class="section-title">Ejemplos simples de Machine Learning</h2>
+        <span class="section-badge"># Examples</span>
+        <h2 class="section-title">Simple examples of Machine Learning</h2>
     </div>
 
     <div class="row g-4">
         <div class="col-md-4">
             <div class="card-dark">
                 <h4 style="color: var(--primary-light);">Email Spam</h4>
-                <p>Clasificar correos como spam o no-spam basandose en el contenido, remitente y patrones del texto.</p>
-                <span class="pill">Clasificacion</span>
-                <span class="pill">Supervisado</span>
+                <p>Classifying emails as spam or not-spam based on content, sender, and text patterns.</p>
+                <span class="pill">Classification</span>
+                <span class="pill">Supervised</span>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card-dark">
-                <h4 style="color: var(--primary-light);">Prediccion de Ventas</h4>
-                <p>Estimar las ventas futuras de un producto basandose en datos historicos de precio, temporada y marketing.</p>
-                <span class="pill">Regresion</span>
-                <span class="pill">Supervisado</span>
+                <h4 style="color: var(--primary-light);">Sales Prediction</h4>
+                <p>Estimating a product's future sales based on historical price, seasonal, and marketing data.</p>
+                <span class="pill">Regression</span>
+                <span class="pill">Supervised</span>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card-dark">
-                <h4 style="color: var(--primary-light);">Segmentacion de Clientes</h4>
-                <p>Agrupar clientes por comportamiento de compra para personalizar estrategias de marketing.</p>
+                <h4 style="color: var(--primary-light);">Customer Segmentation</h4>
+                <p>Grouping customers by purchasing behavior to personalize marketing strategies.</p>
                 <span class="pill">Clustering</span>
-                <span class="pill">No Supervisado</span>
+                <span class="pill">Unsupervised</span>
             </div>
         </div>
     </div>

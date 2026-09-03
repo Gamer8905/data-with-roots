@@ -1,98 +1,75 @@
 # Data with Roots
 
-Aplicación web interactiva de **Machine Learning** desarrollada con **Python**, **Flask** y **Bootstrap** para estimar el **tiempo de entrega según la distancia recorrida** mediante un modelo de **Regresión Lineal Simple**.
+Interactive **Machine Learning** web application built with **Python**, **Flask**, and **Bootstrap** to estimate **delivery time based on distance traveled** using a **Simple Linear Regression** model.
 
 <p align="center">
-  <strong>Universidad de Cundinamarca · Semestre 6 · Machine Learning</strong>
+  <strong>Universidad de Cundinamarca · Semester 6 · Machine Learning</strong>
 </p>
 
 ---
 
-## 🎯 Tema del Proyecto
+## 🎯 Project Topic
 
-**Estimar el tiempo de entrega según la distancia recorrida.**
+**Estimate delivery time based on distance traveled.**
 
-Se utilizan **600 registros históricos** de envíos (distancia en km y tiempo real de entrega en minutos) para entrenar un modelo de Regresión Lineal Simple que predice el tiempo de entrega para nuevas distancias.
+**600 historical shipment records** (distance in km and actual delivery time in minutes) are used to train a Simple Linear Regression model that predicts delivery time for new distances.
 
-## 🚀 Características
+## 🚀 Features
 
-- 🧠 **Conceptos de Machine Learning** explicados de forma visual
-- 📊 **Tipos de ML**: Supervisado, No Supervisado y por Refuerzo
-- 💡 **4 Casos de Uso** en diferentes contextos (salud, finanzas, retail, autos)
-- 📐 **Regresión Lineal** - conceptos fundamentales
-- 📈 **Gráfico de dispersión** con línea de regresión generado con matplotlib
-- 🔮 **Formulario de predicción** en tiempo real con el modelo scikit-learn
+- 🧠 **Machine Learning concepts** explained visually
+- 📊 **Types of ML**: Supervised, Unsupervised, and Reinforcement Learning
+- 💡 **4 Use Cases** in different contexts (healthcare, finance, retail, automotive)
+- 📐 **Linear Regression** - fundamental concepts
+- 📈 **Scatter plot** with regression line generated using matplotlib
+- 🔮 **Real-time prediction form** using the scikit-learn model
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
-| Tecnología | Versión | Función |
+| Technology | Version | Function |
 |-----------|---------|---------|
-| Python | 3.x | Lenguaje principal |
-| Flask | 3.0.0 | Microframework web |
-| scikit-learn | 1.3.2 | Modelo de Regresión Lineal |
-| numpy | 1.26.2 | Cálculos numéricos |
-| pandas | 2.1.4 | Manipulación de datos |
-| matplotlib | 3.8.2 | Visualización (gráficos) |
-| Bootstrap | 5.3.2 | Diseño responsive |
+| Python | 3.x | Main language |
+| Flask | 3.0.0 | Web microframework |
+| scikit-learn | 1.3.2 | Linear Regression model |
+| numpy | 1.26.2 | Numerical calculations |
+| pandas | 2.1.4 | Data manipulation |
+| matplotlib | 3.8.2 | Visualization (charts) |
+| Bootstrap | 5.3.2 | Responsive design |
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
-```
-ML/
-|-- app.py                    # Aplicación Flask + Modelo ML
-|-- generate_dataset.py       # Generador de 600 registros
-|-- requirements.txt          # Dependencias de Python
-|-- Procfile                  # Configuración para Render
-|-- data/
-|   +-- delivery_dataset.csv  # 600 registros del dataset
-|-- static/css/
-|   +-- style.css             # Estilos (tema oscuro)
-+-- templates/
-    |-- base.html             # Plantilla base (navbar + footer)
-    |-- home.html             # Página principal
-    |-- ml_concepts.html      # Conceptos de ML
-    |-- ml_types.html         # Tipos de ML
-    |-- use_case_1.html       # Caso de uso 1
-    |-- use_case_2.html       # Caso de uso 2
-    |-- use_case_3.html       # Caso de uso 3
-    |-- use_case_4.html       # Caso de uso 4
-    |-- lr_concepts.html      # Conceptos Regresión Lineal
-    +-- lr_application.html   # Aplicación RL (gráfico + formulario)
-```
+## 📊 Linear Regression Model
 
-## 📊 Modelo de Regresión Lineal
+- **Independent Variable (X):** Distance traveled (km)
+- **Dependent Variable (Y):** Delivery time (min)
+- **Records:** 600
+- **Equation:** `Time = 0.4513 × Distance + 4.87`
+- **R²:** 0.9961 (99.6% of variance explained)
 
-- **Variable Independiente (X):** Distancia recorrida (km)
-- **Variable Dependiente (Y):** Tiempo de entrega (min)
-- **Registros:** 600
-- **Ecuación:** `Tiempo = 0.4513 × Distancia + 4.87`
-- **R²:** 0.9961 (99.6% de varianza explicada)
-
-## 🧪 Ejecución Local
+## 🧪 Local Execution
 
 ```bash
-# 1. Instalar dependencias
+# 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Ejecutar la aplicación
+# 2. Run the application
 python app.py
 
-# 3. Abrir en el navegador
+# 3. Open in browser
 # http://127.0.0.1:5000
 ```
 
-## ☁️ Despliegue en Render
+## ☁️ Deployment on Render
 
-1. Crear un Web Service conectado al repositorio
+1. Create a Web Service connected to the repository
 2. **Build Command:** `pip install -r requirements.txt`
 3. **Start Command:** `gunicorn app:app`
-4. Crear el servicio
+4. Create the service
 
-## 🌐 Enlaces
+## 🌐 Links
 
-- Repositorio: `https://github.com/machinelearning-source/data-with-roots`
-- Aplicación (Render): *(pendiente de desplegar)*
+- Repository: `https://github.com/machinelearning-source/data-with-roots`
+- Application (Render): *(pending deployment)*
 
 ---
 
-**Universidad de Cundinamarca · Facultad de Ingeniería · Semestre 6 · Machine Learning**
+**Universidad de Cundinamarca · Faculty of Engineering · Semester 6 · Machine Learning**

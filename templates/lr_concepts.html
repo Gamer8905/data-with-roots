@@ -1,148 +1,148 @@
 {% extends "base.html" %}
-{% block title %}Regresion Lineal - Conceptos{% endblock %}
+{% block title %}Linear Regression - Concepts{% endblock %}
 {% block content %}
 
 <header class="hero-section">
     <div class="container">
         <span class="hero-tag">Supervised Learning</span>
-        <h1>Regresion Lineal - <span>Conceptos</span></h1>
-        <p>Fundamentos necesarios para comprender el algoritmo de Regresion Lineal Simple.</p>
+        <h1>Linear Regression - <span>Concepts</span></h1>
+        <p>Fundamentals needed to understand the Simple Linear Regression algorithm.</p>
     </div>
 </header>
 
 <div class="container mt-5 mb-section">
 
     <div class="mb-5">
-        <span class="section-badge"># Definicion</span>
-        <h2 class="section-title">Que es Regresion Lineal?</h2>
+        <span class="section-badge"># Definition</span>
+        <h2 class="section-title">What is Linear Regression?</h2>
     </div>
 
     <div class="card-dark mb-4">
-        <p>La <strong>Regresion Lineal</strong> es un algoritmo de Machine Learning supervisado que modela la relacion entre una variable independiente (X) y una variable dependiente (Y) ajustando una linea recta que mejor represente los datos.</p>
+        <p><strong>Linear Regression</strong> is a supervised Machine Learning algorithm that models the relationship between an independent variable (X) and a dependent variable (Y) by fitting a straight line that best represents the data.</p>
         <div class="concept-highlight">
-            Formula: <strong>Y = mX + b</strong> donde m es la pendiente (slope) y b es el intercepto (bias).
+            Formula: <strong>Y = mX + b</strong> where m is the slope and b is the intercept (bias).
         </div>
-        <p>El objetivo es encontrar los valores optimos de <strong>m</strong> y <strong>b</strong> que minimicen la diferencia entre los valores reales y los predichos.</p>
+        <p>The goal is to find the optimal values of <strong>m</strong> and <strong>b</strong> that minimize the difference between the actual values and the predicted values.</p>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Problemas</span>
-        <h2 class="section-title">Que problemas resuelve?</h2>
+        <span class="section-badge"># Problems</span>
+        <h2 class="section-title">What problems does it solve?</h2>
     </div>
 
     <div class="row g-4 mb-4">
         <div class="col-md-4">
             <div class="card-dark">
-                <h4 style="color: var(--primary-light);">Prediccion de Valores</h4>
-                <p>Estimar el precio de una vivienda, el salario esperado, o el tiempo de entrega basandose en una variable de entrada.</p>
+                <h4 style="color: var(--primary-light);">Value Prediction</h4>
+                <p>Estimating the price of a home, the expected salary, or delivery time based on an input variable.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card-dark">
-                <h4 style="color: var(--primary-light);">Analisis de Tendencias</h4>
-                <p>Identificar la direccion y fuerza de la relacion entre dos variables: a mayor distancia, mayor tiempo.</p>
+                <h4 style="color: var(--primary-light);">Trend Analysis</h4>
+                <p>Identifying the direction and strength of the relationship between two variables: the greater the distance, the longer the time.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card-dark">
-                <h4 style="color: var(--primary-light);">Extrapolacion</h4>
-                <p>Hacer estimaciones para valores fuera del rango observado (con precaucion).</p>
+                <h4 style="color: var(--primary-light);">Extrapolation</h4>
+                <p>Making estimates for values outside the observed range (with caution).</p>
             </div>
         </div>
     </div>
 
     <div class="mb-5">
         <span class="section-badge"># Variables</span>
-        <h2 class="section-title">Variables Independiente y Dependiente</h2>
+        <h2 class="section-title">Independent and Dependent Variables</h2>
     </div>
 
     <div class="row g-4 mb-4">
         <div class="col-md-6">
             <div class="card-dark">
                 <div class="card-icon icon-blue">X</div>
-                <h3>Variable Independiente (X)</h3>
-                <p>Es la variable de entrada o predictor. Es el valor que el usuario proporciona al modelo. Se encuentra en el eje horizontal (eje X) del grafico.</p>
-                <p><strong>Ejemplo:</strong> Distancia en kilometros.</p>
+                <h3>Independent Variable (X)</h3>
+                <p>This is the input or predictor variable. It is the value provided to the model by the user. It is found on the horizontal axis (X-axis) of the chart.</p>
+                <p><strong>Example:</strong> Distance in kilometers.</p>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card-dark">
                 <div class="card-icon icon-red">Y</div>
-                <h3>Variable Dependiente (Y)</h3>
-                <p>Es la variable de salida o objetivo. Es el valor que el modelo intenta predecir. Se encuentra en el eje vertical (eje Y) del grafico.</p>
-                <p><strong>Ejemplo:</strong> Tiempo de entrega en minutos.</p>
+                <h3>Dependent Variable (Y)</h3>
+                <p>This is the output or target variable. It is the value the model tries to predict. It is found on the vertical axis (Y-axis) of the chart.</p>
+                <p><strong>Example:</strong> Delivery time in minutes.</p>
             </div>
         </div>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Relacion</span>
-        <h2 class="section-title">Relacion entre Variables y Linea de Regresion</h2>
+        <span class="section-badge"># Relationship</span>
+        <h2 class="section-title">Relationship Between Variables and the Regression Line</h2>
     </div>
 
     <div class="card-dark mb-4">
-        <p>La <strong>linea de regresion</strong> representa la mejor aproximacion lineal de los datos. Cada punto en el grafico de dispersion (scatter plot) representa un registro del dataset.</p>
+        <p>The <strong>regression line</strong> represents the best linear approximation of the data. Each point on the scatter plot represents a record from the dataset.</p>
         <ul class="features-list mt-3">
-            <li>Los puntos se dispersan alrededor de la linea.</li>
-            <li>La linea minimiza la suma de los errores cuadraticos (MSE).</li>
-            <li>Si la pendiente es positiva, a mayor X, mayor Y.</li>
-            <li>Si la pendiente es negativa, a mayor X, menor Y.</li>
+            <li>The points are scattered around the line.</li>
+            <li>The line minimizes the sum of squared errors (MSE).</li>
+            <li>If the slope is positive, a higher X means a higher Y.</li>
+            <li>If the slope is negative, a higher X means a lower Y.</li>
         </ul>
         <div class="concept-highlight mt-3">
-            <strong>Pendiente (m):</strong> Indica cuanto cambia Y por cada unidad que aumenta X.<br>
-            <strong>Intercepto (b):</strong> Indica el valor de Y cuando X = 0.
+            <strong>Slope (m):</strong> Indicates how much Y changes for each unit increase in X.<br>
+            <strong>Intercept (b):</strong> Indicates the value of Y when X = 0.
         </div>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Prediccion</span>
-        <h2 class="section-title">Prediccion con Regresion Lineal</h2>
+        <span class="section-badge"># Prediction</span>
+        <h2 class="section-title">Prediction with Linear Regression</h2>
     </div>
 
     <div class="card-dark mb-4">
-        <p>Una vez entrenado el modelo (ajustada la linea), se puede predecir el valor de Y para cualquier valor de X nuevo:</p>
+        <p>Once the model is trained (the line is fitted), the value of Y can be predicted for any new value of X:</p>
         <div class="code-snippet">
-            # Ejemplo de prediccion<br>
-            distancia_nueva = 50  # km<br>
-            tiempo_predicho = modelo.predict([[distancia_nueva]])<br>
-            # Resultado: ~27.5 minutos
+            # Prediction example<br>
+            new_distance = 50  # km<br>
+            predicted_time = model.predict([[new_distance]])<br>
+            # Result: ~27.5 minutes
         </div>
-        <p class="mt-3">El modelo simplemente evalua la ecuacion <strong>Y = mX + b</strong> con el nuevo valor de X.</p>
+        <p class="mt-3">The model simply evaluates the equation <strong>Y = mX + b</strong> with the new X value.</p>
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Ejemplo Simple</span>
-        <h2 class="section-title">Ejemplo Intuitivo</h2>
+        <span class="section-badge"># Simple Example</span>
+        <h2 class="section-title">Intuitive Example</h2>
     </div>
 
     <div class="card-dark">
-        <p>Imagina que quieres estimar cuanto tiempo tarda un domicilio. Tienes datos de 600 envios anteriores con la distancia y el tiempo real.</p>
+        <p>Imagine you want to estimate how long a delivery will take. You have data from 600 previous shipments with the distance and the actual time.</p>
         <div class="row g-3 mt-3">
             <div class="col-md-4">
                 <div class="info-box">
-                    <strong style="color: var(--primary-light);">Paso 1</strong>
-                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Recolectar datos historicos de distancia y tiempo de entrega.</p>
+                    <strong style="color: var(--primary-light);">Step 1</strong>
+                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Collect historical data on distance and delivery time.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="info-box">
-                    <strong style="color: var(--primary-light);">Paso 2</strong>
-                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Entrenar el modelo con scikit-learn para encontrar la mejor linea.</p>
+                    <strong style="color: var(--primary-light);">Step 2</strong>
+                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Train the model with scikit-learn to find the best-fit line.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="info-box">
-                    <strong style="color: var(--primary-light);">Paso 3</strong>
-                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Ingresar una nueva distancia y obtener la prediccion del tiempo.</p>
+                    <strong style="color: var(--primary-light);">Step 3</strong>
+                    <p class="mb-0 mt-2" style="font-size:0.9rem;">Enter a new distance and get the time prediction.</p>
                 </div>
             </div>
         </div>
         <div class="code-snippet mt-3">
             from sklearn.linear_model import LinearRegression<br><br>
-            modelo = LinearRegression()<br>
-            modelo.fit(X_distancia, Y_tiempo)  # Entrenar<br>
-            prediccion = modelo.predict([[80]])  # Predecir para 80 km<br>
-            # Resultado: ~41 minutos
+            model = LinearRegression()<br>
+            model.fit(X_distance, Y_time)  # Train<br>
+            prediction = model.predict([[80]])  # Predict for 80 km<br>
+            # Result: ~41 minutes
         </div>
     </div>
 
