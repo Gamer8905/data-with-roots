@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <!-- Menú de Navegación Obligatorio (Navbar visible siempre) -->
+    <!-- Mandatory Sticky Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
         <div class="container">
             <a class="navbar-brand" href="/">
@@ -39,14 +39,14 @@
                             Machine Learning
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownML">
-                            <li><a class="dropdown-item" href="/ml/concepts">Conceptos</a></li>
-                            <li><a class="dropdown-item" href="/ml/types">Tipos de ML</a></li>
+                            <li><a class="dropdown-item" href="/ml/concepts">Concepts</a></li>
+                            <li><a class="dropdown-item" href="/ml/types">Types of ML</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><h6 class="dropdown-header text-uppercase text-muted" style="font-size:0.75rem; letter-spacing:1px;">Casos de Uso (4 Páginas)</h6></li>
-                            <li><a class="dropdown-item" href="/ml/use-cases/1">Caso de Uso 1: Diagnóstico Médico</a></li>
-                            <li><a class="dropdown-item" href="/ml/use-cases/2">Caso de Uso 2: Fraude Financiero</a></li>
-                            <li><a class="dropdown-item" href="/ml/use-cases/3">Caso de Uso 3: Demanda en Retail</a></li>
-                            <li><a class="dropdown-item" href="/ml/use-cases/4">Caso de Uso 4: Vehículos Autónomos</a></li>
+                            <li><h6 class="dropdown-header text-uppercase text-muted" style="font-size:0.75rem; letter-spacing:1px;">Use Cases (4 Pages)</h6></li>
+                            <li><a class="dropdown-item" href="/ml/use-cases/1">Use Case 1: Medical Diagnosis</a></li>
+                            <li><a class="dropdown-item" href="/ml/use-cases/2">Use Case 2: Financial Fraud</a></li>
+                            <li><a class="dropdown-item" href="/ml/use-cases/3">Use Case 3: Retail Demand</a></li>
+                            <li><a class="dropdown-item" href="/ml/use-cases/4">Use Case 4: Autonomous Vehicles</a></li>
                         </ul>
                     </li>
 
@@ -67,23 +67,23 @@
         </div>
     </nav>
 
-    <!-- Contenido Principal -->
+    <!-- Main Content -->
     <main>
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer Corporativo e Institucional -->
+    <!-- Institutional Footer -->
     <footer class="footer-custom">
         <div class="container text-center">
-            <p class="mb-1"><strong>Universidad de Cundinamarca</strong> - Facultad de Ingeniería</p>
-            <p class="mb-1">Materia: <span class="footer-tag">Machine Learning</span> | Semestre 6 | Proyecto: <strong>Data with Roots</strong></p>
+            <p class="mb-1"><strong>University of Cundinamarca</strong> - Faculty of Engineering</p>
+            <p class="mb-1">Course: <span class="footer-tag">Machine Learning</span> | 6th Semester | Project: <strong>Data with Roots</strong></p>
             <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">
-                Tema Asignado: Estimar el tiempo de entrega según la distancia recorrida | Modelo: Regresión Lineal Simple
+                Assigned Topic: Estimating Delivery Time Based on Distance Traveled | Model: Simple Linear Regression
             </p>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 Bundle con Popper JS -->
+    <!-- Bootstrap 5 Bundle with Popper JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

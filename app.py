@@ -4,25 +4,25 @@ import base64
 import numpy as np
 import pandas as pd
 import matplotlib
-matplotlib.use('Agg')  # Modo servidor sin GUI
+matplotlib.use('Agg')  # Headless server mode without GUI
 import matplotlib.pyplot as plt
 from flask import Flask, render_template, request
 from sklearn.linear_model import LinearRegression
 
 app = Flask(__name__)
 
-# Cargar dataset de 600 registros de entregas
+# Load 600-record delivery logistics dataset
 dataset_path = os.path.join(os.path.dirname(__file__), 'data', 'delivery_dataset.csv')
 if not os.path.exists(dataset_path):
-    raise FileNotFoundError(f"No se encontró el dataset en: {dataset_path}")
+    raise FileNotFoundError(f"Dataset not found at: {dataset_path}")
 
 df = pd.read_csv(dataset_path)
 
-# Variables: X = Distancia (km), y = Tiempo de entrega (min)
+# Variables: X = Distance (km), y = Delivery Time (min)
 X = df[['distance_km']].values
 y = df['delivery_time_min'].values
 
-# Entrenar modelo de Regresión Lineal Simple con Scikit-Learn
+# Train Simple Linear Regression model using Scikit-Learn
 model = LinearRegression()
 model.fit(X, y)
 
@@ -31,32 +31,32 @@ intercept = float(model.intercept_)
 r_squared = float(model.score(X, y))
 
 def generate_plot(predicted_distance=None, predicted_time=None):
-    """Genera gráfico scatter plot con línea de regresión y punto predicho."""
+    """Generates scatter plot with fitted regression line and highlighted prediction point."""
     fig, ax = plt.subplots(figsize=(10, 5.8), dpi=130)
 
-    # Dispersión de datos reales
+    # Scatter plot of historical data
     ax.scatter(df['distance_km'], df['delivery_time_min'],
                alpha=0.35, color='#4cc9f0', edgecolors='none', s=35,
-               label=f'Datos reales ({len(df)} envíos históricos)')
+               label=f'Historical Deliveries ({len(df)} records)')
 
-    # Línea de regresión ajustada por Scikit-Learn
+    # Linear regression line fitted by Scikit-Learn
     x_line = np.linspace(df['distance_km'].min(), df['distance_km'].max(), 100).reshape(-1, 1)
     y_line = model.predict(x_line)
     ax.plot(x_line, y_line, color='#e94560', linewidth=2.5,
-            label=f'Línea de regresión: y = {slope:.4f}x + {intercept:.2f} (R² = {r_squared:.4f})')
+            label=f'Regression Line: y = {slope:.4f}x + {intercept:.2f} (R² = {r_squared:.4f})')
 
-    # Si hay predicción activa, resaltar el punto en el gráfico
+    # Highlight prediction point if active
     if predicted_distance is not None and predicted_time is not None:
         ax.scatter([predicted_distance], [predicted_time], color='#10b981', s=160, zorder=6,
                    edgecolors='#ffffff', linewidths=2.5,
-                   label=f'Predicción actual: {predicted_distance} km → {predicted_time} min')
+                   label=f'Current Prediction: {predicted_distance} km → {predicted_time} min')
         ax.axvline(x=predicted_distance, color='#10b981', linestyle=':', linewidth=1.5, alpha=0.7)
         ax.axhline(y=predicted_time, color='#10b981', linestyle=':', linewidth=1.5, alpha=0.7)
 
-    # Configuración estética con tema visual moderno
-    ax.set_xlabel('Distancia Recorrida (km) [Variable Independiente X]', fontsize=11, color='#e2e8f0', labelpad=10)
-    ax.set_ylabel('Tiempo de Entrega (min) [Variable Dependiente Y]', fontsize=11, color='#e2e8f0', labelpad=10)
-    ax.set_title('Modelo de Regresión Lineal: Distancia vs Tiempo de Entrega', fontsize=13, fontweight='bold', color='#f1f5f9', pad=14)
+    # Visual styling with dark theme
+    ax.set_xlabel('Travel Distance (km) [Independent Variable X]', fontsize=11, color='#e2e8f0', labelpad=10)
+    ax.set_ylabel('Delivery Time (min) [Dependent Variable Y]', fontsize=11, color='#e2e8f0', labelpad=10)
+    ax.set_title('Linear Regression Model: Travel Distance vs Delivery Time', fontsize=13, fontweight='bold', color='#f1f5f9', pad=14)
     ax.legend(fontsize=9.5, loc='upper left', framealpha=0.85, facecolor='#1e293b', edgecolor='#334155', labelcolor='#e2e8f0')
     ax.set_facecolor('#131b2e')
     fig.patch.set_facecolor('#0b0f19')
@@ -67,7 +67,7 @@ def generate_plot(predicted_distance=None, predicted_time=None):
     ax.spines['right'].set_visible(False)
     ax.grid(True, alpha=0.15, color='#94a3b8', linestyle='--')
 
-    # Exportar a imagen base64 en memoria
+    # Stream to in-memory Base64 image
     buf = io.BytesIO()
     fig.savefig(buf, format='png', bbox_inches='tight', facecolor=fig.get_facecolor(), edgecolor='none')
     buf.seek(0)
@@ -75,24 +75,24 @@ def generate_plot(predicted_distance=None, predicted_time=None):
     plt.close(fig)
     return plot_base64
 
-# ================= RUTAS DE NAVEGACIÓN =================
+# ================= NAVIGATION ROUTES =================
 
 # 1. Home
 @app.route('/')
 def home():
     return render_template('home.html')
 
-# 2. Machine Learning -> Conceptos
+# 2. Machine Learning -> Concepts
 @app.route('/ml/concepts')
 def ml_concepts():
     return render_template('ml_concepts.html')
 
-# 3. Machine Learning -> Tipos de ML
+# 3. Machine Learning -> Types of ML
 @app.route('/ml/types')
 def ml_types():
     return render_template('ml_types.html')
 
-# 4. Machine Learning -> Casos de Uso (4 páginas independientes)
+# 4. Machine Learning -> Use Cases (4 independent pages)
 @app.route('/ml/use-cases/1')
 @app.route('/ml/use-cases/use-case-1')
 def use_case_1():
@@ -133,7 +133,7 @@ def lr_application():
         try:
             distance_val = float(distance_input)
             if distance_val <= 0:
-                error = 'Por favor ingrese un valor de distancia positivo mayor a 0 km.'
+                error = 'Please enter a positive distance value greater than 0 km.'
                 plot_url = generate_plot()
             else:
                 pred = model.predict([[distance_val]])[0]
@@ -143,7 +143,7 @@ def lr_application():
                 prediction_hours = f"{hrs} h {mins} min" if hrs > 0 else f"{mins} min"
                 plot_url = generate_plot(predicted_distance=distance_val, predicted_time=prediction)
         except ValueError:
-            error = 'Por favor ingrese un valor numérico válido (ejemplo: 12.5 o 45).'
+            error = 'Please enter a valid numeric value (e.g., 12.5 or 45.0).'
             plot_url = generate_plot()
     else:
         plot_url = generate_plot()
