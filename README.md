@@ -37,6 +37,28 @@ Interactive **Machine Learning** web application built with **Python**, **Flask*
 
 ## 📁 Project Structure
 
+```text
+ML/
+|-- app.py                    # Flask Application + ML Model
+|-- generate_dataset.py       # Generator for 600 records
+|-- requirements.txt          # Python dependencies
+|-- Procfile                  # Render configuration
+|-- data/
+|   +-- delivery_dataset.csv  # 600 dataset records
+|-- static/css/
+|   +-- style.css             # Styles (dark theme)
++-- templates/
+    |-- base.html             # Base template (navbar + footer)
+    |-- home.html             # Home page
+    |-- ml_concepts.html      # ML Concepts
+    |-- ml_types.html         # ML Types
+    |-- use_case_1.html       # Use Case 1
+    |-- use_case_2.html       # Use Case 2
+    |-- use_case_3.html       # Use Case 3
+    |-- use_case_4.html       # Use Case 4
+    |-- lr_concepts.html      # Linear Regression Concepts
+    +-- lr_application.html   # Linear Regression Application (chart + form)
+
 ## 📊 Linear Regression Model
 
 - **Independent Variable (X):** Distance traveled (km)
@@ -68,7 +90,11 @@ python app.py
 ## 🌐 Links
 
 - Repository: `https://github.com/machinelearning-source/data-with-roots`
-- Application (Render): *(pending deployment)*
+- Application (Render): `https://data-with-roots-1.onrender.com`
+
+## 🎓 Academic Context
+
+This project is part of the university curriculum in **Machine Learning** and demonstrates how predictive models can be applied in real-world logistics scenarios, combining data analysis, visualization, and web development in a practical and educational way.
 
 ---
 
