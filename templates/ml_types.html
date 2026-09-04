@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Tipos de Machine Learning{% endblock %}
+{% block title %}Machine Learning Types{% endblock %}
 {% block content %}
 
 <header class="hero-section">
     <div class="container">
         <span class="hero-tag">Machine Learning</span>
-        <h1>Tipos de <span>Machine Learning</span></h1>
-        <p>Los algoritmos de ML se clasifican segun la presencia de etiquetas en los datos y la forma de retroalimentacion.</p>
+        <h1>Machine Learning <span>Types</span></h1>
+        <p>ML algorithms are classified based on the presence of labels in the data and the form of feedback.</p>
     </div>
 </header>
 
@@ -18,18 +18,18 @@
         <div class="col-lg-4">
             <div class="card-dark h-100">
                 <div class="card-icon icon-blue">🏷️</div>
-                <h3>Aprendizaje Supervisado</h3>
-                <p>El modelo se entrena con datos <strong>etiquetados</strong>: cada ejemplo incluye su respuesta o valor objetivo correcto.</p>
+                <h3>Supervised Learning</h3>
+                <p>The model is trained with <strong>labeled</strong> data: each example includes its correct answer or target value.</p>
                 <ul class="features-list">
-                    <li><strong>Clasificacion:</strong> Predice categorias discretas (spam/no spam, diagnostico medico).</li>
-                    <li><strong>Regresion:</strong> Predice valores numericos continuos (precios de casas, temperatura).</li>
-                    <li><strong>Supervision directa:</strong> Calcula el error entre la prediccion y la etiqueta real.</li>
+                    <li><strong>Classification:</strong> Predicts discrete categories (spam/no spam, medical diagnosis).</li>
+                    <li><strong>Regression:</strong> Predicts continuous numeric values (house prices, temperature).</li>
+                    <li><strong>Direct supervision:</strong> Calculates the error between the prediction and the actual label.</li>
                 </ul>
                 <div class="mt-3">
-                    <span class="pill">Regresion Lineal</span>
+                    <span class="pill">Linear Regression</span>
                     <span class="pill">Random Forest</span>
                     <span class="pill">SVM</span>
-                    <span class="pill">Redes Neuronales</span>
+                    <span class="pill">Neural Networks</span>
                 </div>
             </div>
         </div>
@@ -38,12 +38,12 @@
         <div class="col-lg-4">
             <div class="card-dark h-100">
                 <div class="card-icon icon-purple">🔍</div>
-                <h3>Aprendizaje No Supervisado</h3>
-                <p>Los datos <strong>no tienen etiquetas</strong>. El algoritmo descubre patrones ocultos, agrupaciones o estructuras intrinsecas.</p>
+                <h3>Unsupervised Learning</h3>
+                <p>The data has <strong>no labels</strong>. The algorithm discovers hidden patterns, groupings or intrinsic structures.</p>
                 <ul class="features-list">
-                    <li><strong>Clustering:</strong> Segmentacion de clientes, agrupamiento de documentos.</li>
-                    <li><strong>Reduccion de Dimensionalidad:</strong> Comprimir variables manteniendo varianza (PCA).</li>
-                    <li><strong>Deteccion de Anomalias:</strong> Fraudes bancarios, fallas industriales.</li>
+                    <li><strong>Clustering:</strong> Customer segmentation, document grouping.</li>
+                    <li><strong>Dimensionality Reduction:</strong> Compress variables while maintaining variance (PCA).</li>
+                    <li><strong>Anomaly Detection:</strong> Bank fraud, industrial failures.</li>
                 </ul>
                 <div class="mt-3">
                     <span class="pill">K-Means</span>
@@ -58,12 +58,12 @@
         <div class="col-lg-4">
             <div class="card-dark h-100">
                 <div class="card-icon icon-green">🎮</div>
-                <h3>Aprendizaje por Refuerzo</h3>
-                <p>Un <strong>agente</strong> aprende a tomar decisiones optimas interactuando con un entorno mediante <strong>recompensas y castigos</strong>.</p>
+                <h3>Reinforcement Learning</h3>
+                <p>An <strong>agent</strong> learns to make optimal decisions by interacting with an environment through <strong>rewards and punishments</strong>.</p>
                 <ul class="features-list">
-                    <li><strong>Exploracion vs. Explotacion:</strong> Descubrir nuevas estrategias o aprovechar las conocidas.</li>
-                    <li><strong>Sin etiquetas directas:</strong> Se aprende por ensayo y error.</li>
-                    <li><strong>Aplicaciones:</strong> Conduccion autonoma, videojuegos, robotica.</li>
+                    <li><strong>Exploration vs. Exploitation:</strong> Discover new strategies or exploit known ones.</li>
+                    <li><strong>No direct labels:</strong> Learning is through trial and error.</li>
+                    <li><strong>Applications:</strong> Autonomous driving, video games, robotics.</li>
                 </ul>
                 <div class="mt-3">
                     <span class="pill">Q-Learning</span>
@@ -77,42 +77,42 @@
     </div>
 
     <div class="mb-5">
-        <span class="section-badge"># Comparativa</span>
-        <h2 class="section-title">Cuadro Comparativo</h2>
+        <span class="section-badge"># Comparison</span>
+        <h2 class="section-title">Comparison Table</h2>
     </div>
 
     <div class="card-dark" style="overflow-x: auto;">
         <table class="table-dark-custom">
             <thead>
                 <tr>
-                    <th>Tipo</th>
-                    <th>Datos de Entrada</th>
-                    <th>Objetivo Principal</th>
-                    <th>Mecanismo de Aprendizaje</th>
-                    <th>Ejemplo Practico</th>
+                    <th>Type</th>
+                    <th>Input Data</th>
+                    <th>Main Objective</th>
+                    <th>Learning Mechanism</th>
+                    <th>Practical Example</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong style="color: #4cc9f0;">Supervisado</strong></td>
-                    <td>Datos etiquetados (X, y)</td>
-                    <td>Predecir etiqueta/resultado para nuevos datos</td>
-                    <td>Minimizacion del error respecto a la verdad fundamental</td>
-                    <td>Prediccion de precios de vivienda</td>
+                    <td><strong style="color: #4cc9f0;">Supervised</strong></td>
+                    <td>Labeled data (X, y)</td>
+                    <td>Predict label/result for new data</td>
+                    <td>Minimization of error with respect to ground truth</td>
+                    <td>Housing price prediction</td>
                 </tr>
                 <tr>
-                    <td><strong style="color: #c77dff;">No Supervisado</strong></td>
-                    <td>Datos sin etiquetas (X)</td>
-                    <td>Descubrir estructura, patrones y clusters</td>
-                    <td>Calculo de similitud, densidad y varianza</td>
-                    <td>Segmentacion de clientes</td>
+                    <td><strong style="color: #c77dff;">Unsupervised</strong></td>
+                    <td>Unlabeled data (X)</td>
+                    <td>Discover structure, patterns and clusters</td>
+                    <td>Calculation of similarity, density and variance</td>
+                    <td>Customer segmentation</td>
                 </tr>
                 <tr>
-                    <td><strong style="color: #34d399;">Por Refuerzo</strong></td>
-                    <td>Estados del Entorno (S)</td>
-                    <td>Aprender una politica de acciones optima</td>
-                    <td>Senal de recompensa/castigo tras una accion</td>
-                    <td>Navegacion de drones autonomos</td>
+                    <td><strong style="color: #34d399;">Reinforcement</strong></td>
+                    <td>Environment States (S)</td>
+                    <td>Learn an optimal action policy</td>
+                    <td>Reward/punishment signal after an action</td>
+                    <td>Autonomous drone navigation</td>
                 </tr>
             </tbody>
         </table>

@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Caso de Uso 2 - Fraude Financiero{% endblock %}
+{% block title %}Use Case 2 - Financial Fraud{% endblock %}
 {% block content %}
 
 <header class="hero-section">
     <div class="container">
-        <span class="hero-tag">Caso de Uso 2</span>
-        <h1>Deteccion de <span>Fraude</span> Financiero</h1>
-        <p>ML para identificar transacciones fraudulentas en tiempo real en el sector bancario.</p>
+        <span class="hero-tag">Use Case 2</span>
+        <h1>Financial <span>Fraud</span> Detection</h1>
+        <p>ML to identify fraudulent transactions in real-time in the banking sector.</p>
     </div>
 </header>
 
@@ -15,16 +15,16 @@
     <div class="row g-4">
         <div class="col-lg-8">
             <div class="card-dark h-100">
-                <h3>Contexto del Problema</h3>
-                <p>Las instituciones financieras procesan millones de transacciones diarias. El fraude con tarjetas de credito cuesta miles de millones de dolares anualmente a nivel mundial. Los metodos tradicionales basados en reglas estaticas no logran detectar patrones de fraude sofisticados y modernos.</p>
-                <p>El problema es: <strong>Como identificar transacciones fraudulentas en tiempo real</strong> entre millones de operaciones legitimas, minimizando falsos positivos.</p>
+                <h3>Problem Context</h3>
+                <p>Financial institutions process millions of daily transactions. Credit card fraud costs billions of dollars annually worldwide. Traditional methods based on static rules fail to detect sophisticated and modern fraud patterns.</p>
+                <p>The problem is: <strong>How to identify fraudulent transactions in real-time</strong> among millions of legitimate operations, minimizing false positives.</p>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="card-dark h-100">
                 <div class="card-icon icon-purple mx-auto">🏦</div>
-                <h4 class="text-center">Tipo de ML</h4>
-                <p class="text-center"><strong>Aprendizaje No Supervisado</strong> + Supervisado</p>
+                <h4 class="text-center">ML Type</h4>
+                <p class="text-center"><strong>Unsupervised Learning</strong> + Supervised</p>
                 <div class="text-center mt-3">
                     <span class="pill">Anomaly Detection</span>
                     <span class="pill">Random Forest</span>
@@ -36,31 +36,31 @@
     <div class="row g-4 mt-3">
         <div class="col-md-6">
             <div class="card-dark h-100">
-                <h4 style="color: var(--primary-light);">Datos que podrian usarse</h4>
+                <h4 style="color: var(--primary-light);">Data that could be used</h4>
                 <ul class="features-list">
-                    <li>Monto y hora de cada transaccion.</li>
-                    <li>Ubicacion geografica del punto de venta.</li>
-                    <li>Historial de transacciones del cliente.</li>
-                    <li>Frecuencia y patron de gasto habitual.</li>
-                    <li>Dispositivo y canal utilizado.</li>
+                    <li>Amount and time of each transaction.</li>
+                    <li>Geographic location of the point of sale.</li>
+                    <li>Customer transaction history.</li>
+                    <li>Frequency and usual spending pattern.</li>
+                    <li>Device and channel used.</li>
                 </ul>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card-dark h-100">
-                <h4 style="color: var(--primary-light);">Que deberia predecir el modelo</h4>
+                <h4 style="color: var(--primary-light);">What the model should predict</h4>
                 <ul class="features-list">
-                    <li><strong>Clasificacion:</strong> Si una transaccion es legitima o fraudulenta.</li>
-                    <li><strong>Score de riesgo:</strong> Probabilidad de fraude (0-100%).</li>
-                    <li><strong>Agrupamiento:</strong> Detectar patrones atipicos no conocidos.</li>
+                    <li><strong>Classification:</strong> Whether a transaction is legitimate or fraudulent.</li>
+                    <li><strong>Risk score:</strong> Fraud probability (0-100%).</li>
+                    <li><strong>Clustering:</strong> Detect unknown anomalous patterns.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="card-dark mt-4">
-        <h4 style="color: var(--success);">Beneficio potencial</h4>
-        <p>Proteger a millones de clientes de perdidas financieras, reducir costos operativos de investigacion de fraudes, mejorar la experiencia del cliente al evitar falsos bloqueos, y adaptarse a nuevas estafas que evolucionan constantemente.</p>
+        <h4 style="color: var(--success);">Potential benefit</h4>
+        <p>Protect millions of clients from financial losses, reduce operational costs of fraud investigation, improve customer experience by avoiding false blocks, and adapt to new scams that constantly evolve.</p>
     </div>
 
 </div>
