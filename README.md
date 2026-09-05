@@ -1,101 +1,177 @@
 # Data with Roots
 
-Interactive **Machine Learning** web application built with **Python**, **Flask**, and **Bootstrap** to estimate **delivery time based on distance traveled** using a **Simple Linear Regression** model.
+Data with Roots is an educational web application that demonstrates how
+machine learning can be applied to a practical logistics problem: estimating
+delivery time from traveled distance.
+
+The application combines a Flask web interface with a Simple Linear
+Regression model trained on historical delivery records. It also includes
+learning resources and visual explanations to support the understanding of
+machine learning fundamentals.
 
 <p align="center">
-  <strong>Universidad de Cundinamarca · Semester 6 · Machine Learning</strong>
+  <strong>Universidad de Cundinamarca · Faculty of Engineering · Semester 6 · Machine Learning</strong>
 </p>
 
 ---
 
-## Project Topica
+## Project Objective
 
-**Estimate delivery time based on distance traveled.**
+The main objective is to estimate delivery time based on distance traveled
+using a supervised learning model. In addition to making predictions, the
+project presents the concepts behind the model in an accessible and
+interactive way.
 
-**600 historical shipment records** (distance in km and actual delivery time in minutes) are used to train a Simple Linear Regression model that predicts delivery time for new distances.
+The application is intended for academic and demonstrative purposes. Its
+predictions should not be considered a replacement for operational logistics
+systems or real-world route planning.
 
-## Features
+## Main Features
 
-- **Machine Learning concepts** explained visually
-- **Types of ML**: Supervised, Unsupervised, and Reinforcement Learning
-- **4 Use Cases** in different contexts (healthcare, finance, retail, automotive)
-- **Linear Regression** - fundamental concepts
-- **Scatter plot** with regression line generated using matplotlib
-- **Real-time prediction form** using the scikit-learn model
+- Explanations of fundamental machine learning concepts
+- Overview of supervised, unsupervised, and reinforcement learning
+- Four practical use cases in healthcare, finance, retail, and automotive
+- Educational content about Simple Linear Regression
+- Scatter plot with the fitted regression line
+- Interactive prediction form for new distances
+- Responsive interface built with Bootstrap
+- Dataset statistics and sample records available in the application
+
+## How It Works
+
+1. The application loads the historical dataset from
+   `data/delivery_dataset.csv`.
+2. Distance in kilometers is used as the independent variable.
+3. Delivery time in minutes is used as the dependent variable.
+4. A `LinearRegression` model from scikit-learn is trained when the
+   application starts.
+5. A user enters a positive distance and receives an estimated delivery time.
+
+## Model Summary
+
+- **Independent variable (X):** Distance traveled (km)
+- **Dependent variable (Y):** Delivery time (min)
+- **Training records:** 600
+- **Regression equation:** `Time = 0.4513 × Distance + 4.87`
+- **Coefficient of determination (R²):** `0.9961`
+- **Explained variance:** Approximately 99.6%
+
+The model is based on a single predictor, so its results are useful for
+demonstrating the relationship between distance and delivery time. Real
+delivery times may also depend on traffic, weather, stops, vehicle type, and
+other operational factors that are not included in this dataset.
 
 ## Technologies
 
-| Technology | Version | Function |
+| Technology | Version | Purpose |
 |-----------|---------|---------|
-| Python | 3.x | Main language |
-| Flask | 3.0.0 | Web microframework |
-| scikit-learn | 1.3.2 | Linear Regression model |
-| numpy | 1.26.2 | Numerical calculations |
-| pandas | 2.1.4 | Data manipulation |
-| matplotlib | 3.8.2 | Visualization (charts) |
-| Bootstrap | 5.3.2 | Responsive design |
+| Python | 3.x | Main programming language |
+| Flask | 3.0.0 | Web application framework |
+| scikit-learn | 1.3.2 | Model training and prediction |
+| NumPy | 1.26.2 | Numerical calculations |
+| Pandas | 2.1.4 | Data loading and manipulation |
+| Matplotlib | 3.8.2 | Data visualization |
+| Bootstrap | 5.3.2 | Responsive interface |
+| Gunicorn | 21.2.0 | Production server |
 
 ## Project Structure
 
 ```text
-ML/
-|-- app.py                    # Flask Application + ML Model
-|-- generate_dataset.py       # Generator for 600 records
-|-- requirements.txt          # Python dependencies
-|-- Procfile                  # Render configuration
-|-- data/
-|   +-- delivery_dataset.csv  # 600 dataset records
-|-- static/css/
-|   +-- style.css             # Styles (dark theme)
-+-- templates/
-    |-- base.html             # Base template (navbar + footer)
-    |-- home.html             # Home page
-    |-- ml_concepts.html      # ML Concepts
-    |-- ml_types.html         # ML Types
-    |-- use_case_1.html       # Use Case 1
-    |-- use_case_2.html       # Use Case 2
-    |-- use_case_3.html       # Use Case 3
-    |-- use_case_4.html       # Use Case 4
-    |-- lr_concepts.html      # Linear Regression Concepts
-    +-- lr_application.html   # Linear Regression Application (chart + form)
+.
+├── app.py                     # Flask application and model logic
+├── generate_dataset.py        # Dataset generation utility
+├── requirements.txt           # Python dependencies
+├── Procfile                   # Render deployment configuration
+├── data/
+│   └── delivery_dataset.csv   # Historical records used for training
+├── static/
+│   └── css/
+│       └── style.css          # Application styles
+├── templates/                 # HTML templates
+│   ├── base.html              # Shared layout and navigation
+│   ├── home.html              # Home page
+│   ├── ml_concepts.html       # Machine learning concepts
+│   ├── ml_types.html          # Machine learning types
+│   ├── use_case_1.html        # Use case 1
+│   ├── use_case_2.html        # Use case 2
+│   ├── use_case_3.html        # Use case 3
+│   ├── use_case_4.html        # Use case 4
+│   ├── lr_concepts.html       # Linear Regression concepts
+│   └── lr_application.html    # Chart and prediction form
+├── README.md                  # Project documentation
+└── Data_with_Roots_Proyecto_Completo.docx
+```
 
-## Linear Regression Model
+## Local Installation
 
-- **Independent Variable (X):** Distance traveled (km)
-- **Dependent Variable (Y):** Delivery time (min)
-- **Records:** 600
-- **Equation:** `Time = 0.4513 × Distance + 4.87`
-- **R²:** 0.9961 (99.6% of variance explained)
+### Prerequisites
 
-## Local Execution
+- Python 3.10 or newer
+- pip
+
+### Setup
 
 ```bash
-# 1. Install dependencies
+# Clone the repository
+git clone https://github.com/machinelearning-source/data-with-roots.git
+cd data-with-roots
+
+# Optional: create and activate a virtual environment
+python -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+
+# macOS/Linux
+source .venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-
-# 2. Run the application
-python app.py
-
-# 3. Open in browser
-# http://127.0.0.1:5000
 ```
+
+### Run the Application
+
+```bash
+python app.py
+```
+
+Open the application in a browser at:
+
+```text
+http://127.0.0.1:5000
+```
+
+To stop the development server, press `Ctrl+C` in the terminal.
 
 ## Deployment on Render
 
-1. Create a Web Service connected to the repository
-2. **Build Command:** `pip install -r requirements.txt`
-3. **Start Command:** `gunicorn app:app`
-4. Create the service
+The repository includes a `Procfile` for deployment with Gunicorn.
+
+1. Create a new Render Web Service connected to the repository.
+2. Set the build command to:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set the start command to:
+   ```bash
+   gunicorn app:app
+   ```
+4. Create the service and wait for the deployment to finish.
 
 ## Links
 
-- Repository: `https://github.com/machinelearning-source/data-with-roots`
-- Application (Render): `https://data-with-roots-1.onrender.com`
+- **Repository:** https://github.com/machinelearning-source/data-with-roots
+- **Live application:** https://data-with-roots-1.onrender.com
 
 ## Academic Context
 
-This project is part of the university curriculum in **Machine Learning** and demonstrates how predictive models can be applied in real-world logistics scenarios, combining data analysis, visualization, and web development in a practical and educational way.
+This project was developed as part of the Machine Learning curriculum at the
+Universidad de Cundinamarca. It brings together data analysis, predictive
+modeling, visualization, and web development in a practical educational
+application.
 
 ---
 
-**Universidad de Cundinamarca · Faculty of Engineering · Semester 6 · Machine Learning**
+<p align="center">
+  <strong>Universidad de Cundinamarca · Faculty of Engineering · Semester 6 · Machine Learning</strong>
+</p>
