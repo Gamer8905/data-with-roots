@@ -8,22 +8,22 @@ Interactive **Machine Learning** web application built with **Python**, **Flask*
 
 ---
 
-## 🎯 Project Topic
+## Project Topic
 
 **Estimate delivery time based on distance traveled.**
 
 **600 historical shipment records** (distance in km and actual delivery time in minutes) are used to train a Simple Linear Regression model that predicts delivery time for new distances.
 
-## 🚀 Features
+## Features
 
-- 🧠 **Machine Learning concepts** explained visually
-- 📊 **Types of ML**: Supervised, Unsupervised, and Reinforcement Learning
-- 💡 **4 Use Cases** in different contexts (healthcare, finance, retail, automotive)
-- 📐 **Linear Regression** - fundamental concepts
-- 📈 **Scatter plot** with regression line generated using matplotlib
-- 🔮 **Real-time prediction form** using the scikit-learn model
+- **Machine Learning concepts** explained visually
+- **Types of ML**: Supervised, Unsupervised, and Reinforcement Learning
+- **4 Use Cases** in different contexts (healthcare, finance, retail, automotive)
+- **Linear Regression** - fundamental concepts
+- **Scatter plot** with regression line generated using matplotlib
+- **Real-time prediction form** using the scikit-learn model
 
-## 🛠️ Technologies
+## Technologies
 
 | Technology | Version | Function |
 |-----------|---------|---------|
@@ -35,7 +35,7 @@ Interactive **Machine Learning** web application built with **Python**, **Flask*
 | matplotlib | 3.8.2 | Visualization (charts) |
 | Bootstrap | 5.3.2 | Responsive design |
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 ML/
@@ -59,7 +59,7 @@ ML/
     |-- lr_concepts.html      # Linear Regression Concepts
     +-- lr_application.html   # Linear Regression Application (chart + form)
 
-## 📊 Linear Regression Model
+## Linear Regression Model
 
 - **Independent Variable (X):** Distance traveled (km)
 - **Dependent Variable (Y):** Delivery time (min)
@@ -67,7 +67,7 @@ ML/
 - **Equation:** `Time = 0.4513 × Distance + 4.87`
 - **R²:** 0.9961 (99.6% of variance explained)
 
-## 🧪 Local Execution
+## Local Execution
 
 ```bash
 # 1. Install dependencies
@@ -80,19 +80,19 @@ python app.py
 # http://127.0.0.1:5000
 ```
 
-## ☁️ Deployment on Render
+## Deployment on Render
 
 1. Create a Web Service connected to the repository
 2. **Build Command:** `pip install -r requirements.txt`
 3. **Start Command:** `gunicorn app:app`
 4. Create the service
 
-## 🌐 Links
+## Links
 
 - Repository: `https://github.com/machinelearning-source/data-with-roots`
 - Application (Render): `https://data-with-roots-1.onrender.com`
 
-## 🎓 Academic Context
+## Academic Context
 
 This project is part of the university curriculum in **Machine Learning** and demonstrates how predictive models can be applied in real-world logistics scenarios, combining data analysis, visualization, and web development in a practical and educational way.
 
